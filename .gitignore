@@ -1,0 +1,17 @@
+*.iml
+.gradle
+.gradle/
+**/.gradle/
+/local.properties
+/.idea/
+.idea/
+**/.idea/
+.DS_Store
+build/
+**/build/
+captures/
+.externalNativeBuild
+.cxx
+*.apk
+*.aab
+output-metadata.json

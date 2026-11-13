@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SuggestBox</string>
+    <string name="app_subtitle">Digital Suggestion Box for Local Governance</string>
+
+    <!-- Navigation Tabs -->
+    <string name="tab_home">Home</string>
+    <string name="tab_community">Community</string>
+    <string name="tab_track">Track</string>
+    <string name="tab_profile">Profile</string>
+
+    <!-- Common Actions -->
+    <string name="action_back">Back</string>
+    <string name="action_continue">Continue</string>
+    <string name="action_next">Next</string>
+    <string name="action_skip">Skip</string>
+    <string name="action_submit">Submit</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_done">Done</string>
+    <string name="action_clear_search">Clear search</string>
+    <string name="action_switch_role">Switch Workspace Role</string>
+    <string name="action_copy_id">Copy Tracking ID</string>
+    <string name="action_share">Share</string>
+    <string name="action_upvote">Upvote</string>
+    <string name="action_send">Send</string>
+    <string name="action_save_draft">Save Offline Draft</string>
+    <string name="action_resume_draft">Resume</string>
+    <string name="action_sync_now">Sync Now</string>
+
+    <!-- Submission Kinds (from Synopsis: Fix-It vs Build-It) -->
+    <string name="kind_issue">Fix-It (Issue / Grievance)</string>
+    <string name="kind_idea">Build-It (Civic Idea)</string>
+    <string name="kind_issue_short">Fix-It Issue</string>
+    <string name="kind_idea_short">Build-It Idea</string>
+
+    <!-- Categories -->
+    <string name="cat_roads">Roads</string>
+    <string name="cat_water">Water</string>
+    <string name="cat_sanitation">Sanitation</string>
+    <string name="cat_electricity">Electricity</string>
+    <string name="cat_health">Health</string>
+    <string name="cat_education">Education</string>
+    <string name="cat_safety">Safety</string>
+    <string name="cat_parks">Parks</string>
+    <string name="cat_other">Other</string>
+
+    <!-- Statuses -->
+    <string name="status_submitted">Submitted</string>
+    <string name="status_under_review">Under Review</string>
+    <string name="status_in_progress">In Progress</string>
+    <string name="status_resolved">Resolved</string>
+    <string name="status_rejected">Rejected</string>
+
+    <!-- Priorities -->
+    <string name="priority_low">Low</string>
+    <string name="priority_medium">Medium</string>
+    <string name="priority_high">High</string>
+    <string name="priority_urgent">Urgent</string>
+
+    <!-- Roles -->
+    <string name="role_citizen">Citizen</string>
+    <string name="role_official">Official / Ward Officer</string>
+    <string name="role_super_admin">Super Admin (Commissioner)</string>
+
+    <!-- Languages -->
+    <string name="lang_english">English</string>
+    <string name="lang_hindi">हिन्दी (Hindi)</string>
+    <string name="lang_kannada">ಕನ್ನಡ (Kannada)</string>
+
+    <!-- Onboarding & DPDP Consent -->
+    <string name="onb_title_1">Your Voice in Local Governance</string>
+    <string name="onb_desc_1">Report neighborhood issues or propose participatory ideas directly to your Gram Panchayat or Municipal Ward.</string>
+    <string name="onb_title_2">Pin Exact Locations &amp; Proof</string>
+    <string name="onb_desc_2">Attach photos, voice notes, and exact GPS pins so field engineers resolve problems without guesswork.</string>
+    <string name="onb_title_3">Transparent SLAs &amp; Privacy</string>
+    <string name="onb_desc_3">Follow every update in real time, verify resolution photos, or participate anonymously under strict privacy safeguards.</string>
+    <string name="onb_choose_lang">Choose Your Preferred Language</string>
+    <string name="onb_get_started">Get Started</string>
+
+    <string name="dpdp_title">Privacy &amp; Data Consent</string>
+    <string name="dpdp_subtitle">Digital Personal Data Protection (DPDP Act) Notice</string>
+    <string name="dpdp_point_1_title">Purpose Limitation</string>
+    <string name="dpdp_point_1_desc">Your phone number is used strictly for OTP verification and status updates on your submissions.</string>
+    <string name="dpdp_point_2_title">Anonymous Whistleblower Mode</string>
+    <string name="dpdp_point_2_desc">When submitting anonymously, your identity is never displayed to other citizens or public feeds.</string>
+    <string name="dpdp_point_3_title">Right to Erase</string>
+    <string name="dpdp_point_3_desc">You may withdraw consent or delete your account and personal metadata at any time in Profile.</string>
+    <string name="dpdp_checkbox_label">I understand and consent to local governance processing as described above.</string>
+    <string name="dpdp_accept_continue">Accept &amp; Continue</string>
+
+    <!-- Login / Email Verification -->
+    <string name="login_title">Citizen Sign In</string>
+    <string name="login_subtitle">Verify with your email address or continue anonymously</string>
+    <string name="login_email_label">Email Address</string>
+    <string name="login_email_placeholder">citizen@example.gov.in</string>
+    <string name="login_phone_label">Mobile Number</string>
+    <string name="login_phone_placeholder">+91 98450 12345</string>
+    <string name="login_send_otp">Send Verification Code</string>
+    <string name="login_otp_label">6-Digit Verification Code</string>
+    <string name="login_otp_placeholder">123456</string>
+    <string name="login_otp_helper">Enter the 6-digit verification code sent to your email address.</string>
+    <string name="login_verify_otp">Verify &amp; Enter Ward</string>
+    <string name="login_anon_cta">Continue Anonymously</string>
+    <string name="login_anon_desc">Browse community issues and submit reports without linking your email address.</string>
+    <string name="login_or_divider">OR</string>
+    <string name="login_otp_sms_delivered">Verification Code Sent to %s</string>
+    <string name="login_otp_autofill_btn">Auto-Fill: %s</string>
+    <string name="login_resend_countdown">Resend code in %ds</string>
+    <string name="login_resend_button">Resend Code</string>
+    <string name="login_change_email">Change Email Address</string>
+    <string name="login_change_phone">Change Phone Number</string>
+    <string name="login_attempts_remaining">%d verification attempt(s) remaining</string>
+    <string name="login_code_expiry_notice">Code valid for 10 minutes</string>
+    <string name="notification_channel_auth_name">Authentication &amp; Security</string>
+    <string name="notification_channel_auth_desc">Real-time email verification codes and login security alerts.</string>
+    <string name="otp_sms_notification_title">SuggestBox Verification Code: %s</string>
+    <string name="otp_sms_notification_body">Your verification code is %1$s for %2$s. Valid for 10 minutes. Do not share with anyone.</string>
+    <string name="logout_dialog_title">Sign Out of SuggestBox?</string>
+    <string name="logout_dialog_message">You will remain signed in until you choose to log out. To access citizen governance features again, you will need to verify with an email code. Are you sure you want to sign out?</string>
+    <string name="logout_dialog_confirm">Sign Out</string>
+    <string name="logout_dialog_cancel">Cancel</string>
+    <string name="email_migration_banner_title">Action Recommended: Verify Email</string>
+    <string name="email_migration_banner_desc">Your account was created via phone login. Please verify an email address to ensure continuous access to ward resolutions.</string>
+    <string name="email_migration_link_action">Verify Email</string>
+    <string name="email_migration_dismiss">Dismiss</string>
+    <string name="submit_voice_quick_presets">Quick Voice Dictation Presets</string>
+    <string name="submit_voice_system_dialog">Google Voice Typing</string>
+    <string name="submit_voice_preset_1">Pothole repair needed on 100 Feet Road near bus stop</string>
+    <string name="submit_voice_preset_2">Streetlight not working on 4th Cross for past 3 days</string>
+    <string name="submit_voice_preset_3">Garbage dump overflow attracting stray animals near park</string>
+    <string name="submit_voice_preset_4">Underground water pipe leaking near community hall</string>
+
+    <!-- Home Screen -->
+    <string name="ward_default_eyebrow">Ward 14 • Municipal Council</string>
+    <string name="home_select_ward">Select Ward / Gram Panchayat</string>
+    <string name="home_announcements">Official Announcements</string>
+    <string name="home_trending">Trending in Your Ward</string>
+    <string name="home_view_all">See All</string>
+    <string name="quick_new_suggestion">New Suggestion</string>
+    <string name="quick_new_suggestion_sub">Report issue or civic idea</string>
+    <string name="quick_track_issue">Track Status</string>
+    <string name="quick_track_issue_sub">Timeline &amp; official updates</string>
+    <string name="quick_nearby_issues">Nearby Issues</string>
+    <string name="quick_nearby_issues_sub">Browse ward reports</string>
+    <string name="quick_official_portal">Official Console</string>
+    <string name="quick_official_portal_sub">Department triage &amp; SLAs</string>
+    <string name="section_quick_actions">Quick Actions</string>
+
+    <!-- Multi-Step Submit Flow -->
+    <string name="submit_title">New Submission</string>
+    <string name="submit_step_counter">Step %1$d of %2$d</string>
+    <string name="submit_step_1_title">Choose Type &amp; Category</string>
+    <string name="submit_step_2_title">Describe Your Suggestion</string>
+    <string name="submit_step_3_title">Add Photos or Video</string>
+    <string name="submit_step_4_title">Pin Exact Location</string>
+    <string name="submit_step_5_title">Review &amp; Submit</string>
+    <string name="submit_title_label">Concise Headline</string>
+    <string name="submit_title_hint">e.g. Broken streetlight near Ward School gate</string>
+    <string name="submit_desc_label">Detailed Description</string>
+    <string name="submit_desc_hint">Describe the location landmarks, safety risk, or proposed civic improvement…</string>
+    <string name="submit_voice_btn">Voice-to-Text</string>
+    <string name="submit_voice_stop">Stop Listening</string>
+    <string name="submit_voice_listening">Listening… speak clearly now</string>
+    <string name="submit_voice_prompt">Speak your civic suggestion or complaint</string>
+    <string name="submit_voice_no_match">Could not recognize words. Check your mic volume or speak closer and retry.</string>
+    <string name="submit_voice_permission_denied">Microphone permission is required for Voice-to-Text.</string>
+    <string name="submit_voice_network_error">Speech service network error. Ensure internet or offline voice pack is enabled.</string>
+    <string name="submit_voice_unavailable">Voice input service unavailable on this device; try the keyboard mic icon.</string>
+    <string name="submit_duplicate_title">Similar Active Report Nearby (%1$dm away)</string>
+    <string name="submit_duplicate_cta">Upvote Existing Instead</string>
+    <string name="submit_media_hint">Attach up to 4 compressed photos or short video clips.</string>
+    <string name="submit_pick_media">Add Photos / Video (%1$d/4)</string>
+    <string name="submit_location_gps">Use Current GPS</string>
+    <string name="submit_location_tap_hint">Tap anywhere on the ward map to position the pin accurately.</string>
+    <string name="submit_address_label">Landmark / Street Name</string>
+    <string name="submit_anon_toggle">Submit Anonymously</string>
+    <string name="submit_anon_toggle_sub">Hide my name and phone number from public feeds and citizen views</string>
+    <string name="submit_draft_saved">Draft saved offline in Room database</string>
+    <string name="submit_success_title">Submission Received</string>
+    <string name="submit_success_desc">Your submission has been routed to your local governing body with an active SLA timer.</string>
+    <string name="submit_tracking_label">Unique Tracking ID</string>
+    <string name="submit_view_timeline">Track Progress</string>
+
+    <!-- Validation Errors -->
+    <string name="err_title_short">Headline must be at least 8 characters.</string>
+    <string name="err_desc_short">Please provide at least 20 characters of clear details.</string>
+    <string name="err_profanity">Please keep submissions respectful and free of spam terms.</string>
+    <string name="err_rate_limit">Hourly submission limit reached. Please try again later.</string>
+    <string name="err_invalid_phone">Enter a valid 10-digit mobile number.</string>
+    <string name="err_invalid_email">Enter a valid email address (e.g. citizen@example.gov.in).</string>
+    <string name="err_invalid_otp">Enter a valid 6-digit verification code.</string>
+    <string name="err_code_expired">Verification code has expired. Please request a new one.</string>
+    <string name="err_max_attempts">Maximum verification attempts reached (5/5). Code invalidated for security.</string>
+    <string name="login_code_sent_info">Verification code delivered to %s</string>
+
+    <!-- Community Feed -->
+    <string name="community_search_hint">Search ward suggestions…</string>
+    <string name="community_seg_trending">Trending</string>
+    <string name="community_seg_recent">Recent</string>
+    <string name="community_seg_nearby">Nearby</string>
+    <string name="community_all">All</string>
+    <string name="community_filter_distance">Distance</string>
+    <string name="community_dist_all">Any Distance</string>
+    <string name="community_dist_500m">&lt; 500m</string>
+    <string name="community_dist_2km">&lt; 2 km</string>
+    <string name="community_empty_title">No Matching Suggestions</string>
+    <string name="community_empty_desc">Try clearing active filters or be the first citizen to submit in this category.</string>
+
+    <!-- Detail & Track -->
+    <string name="detail_title">Suggestion Details</string>
+    <string name="detail_timeline">Official Status Timeline</string>
+    <string name="detail_official_response">Official Response</string>
+    <string name="detail_proof_title">Before &amp; After Verification</string>
+    <string name="detail_proof_verified">Geotagged resolution proof verified by field officer</string>
+    <string name="detail_comments">Community Discussion (%1$d)</string>
+    <string name="detail_comment_hint">Add constructive input…</string>
+    <string name="detail_rate_title">Rate This Resolution</string>
+    <string name="detail_rate_desc">Confirm work quality and share feedback with the ward office.</string>
+    <string name="detail_rate_feedback_hint">Optional feedback on timeliness and quality…</string>
+    <string name="detail_rate_submit">Submit Rating</string>
+    <string name="detail_rated_thanks">Rated %1$d/5 ★ • Thank you for auditing!</string>
+    <string name="detail_sla_overdue">SLA Overdue</string>
+    <string name="detail_sla_ontrack">Within SLA</string>
+
+    <string name="track_lookup_label">Look Up Any Tracking ID</string>
+    <string name="track_lookup_hint">e.g. SBX-W14-2041</string>
+    <string name="track_lookup_btn">Find</string>
+    <string name="track_not_found">No suggestion found for that Tracking ID.</string>
+    <string name="track_my_submissions">My Submissions</string>
+    <string name="track_offline_drafts">Offline Drafts (%1$d)</string>
+    <string name="track_empty_title">No Active Submissions Yet</string>
+    <string name="track_empty_desc">Submit a suggestion or enter a tracking ID to follow real-time municipal progress.</string>
+
+    <!-- Profile & Settings -->
+    <string name="section_settings_appearance">Appearance &amp; Preferences</string>
+    <string name="setting_dark_mode">Dark Appearance</string>
+    <string name="setting_dark_mode_sub">Switch between calm light and OLED dark surfaces</string>
+    <string name="setting_notifications">Push Notifications</string>
+    <string name="setting_notifications_sub">Alerts on status changes and ward announcements</string>
+    <string name="setting_language">App Language</string>
+    <string name="setting_role_mode">Active Role Preview</string>
+    <string name="section_governance_tools">Governance &amp; Support</string>
+    <string name="setting_privacy">Privacy &amp; DPDP Controls</string>
+    <string name="setting_help_faq">Help &amp; FAQ</string>
+    <string name="setting_about">About SuggestBox</string>
+    <string name="setting_logout">Sign Out</string>
+    <string name="setting_delete_account">Delete My Account &amp; Data</string>
+    <string name="delete_confirm_title">Erase Account &amp; Personal Data?</string>
+    <string name="delete_confirm_desc">Under the DPDP Act, this permanently removes your phone number and personal profile. Public anonymous records remain anonymized.</string>
+    <string name="route_official">Open Official / Admin Console</string>
+    <string name="placeholder_phase3_notice">Full interactive screen will be delivered in Phase 3 (Official / Admin Flow).</string>
+
+    <!-- Phase 3: Official & Super Admin -->
+    <string name="official_dashboard_title">Official Dashboard</string>
+    <string name="official_kpi_total">Total Tickets</string>
+    <string name="official_kpi_overdue">SLA Overdue</string>
+    <string name="official_kpi_avg_time">Avg Resolution</string>
+    <string name="official_status_chart">Status Breakdown</string>
+    <string name="official_category_chart">Category Breakdown</string>
+    <string name="official_open_inbox">Open Triage Inbox</string>
+    <string name="official_broadcast_btn">Broadcast Ward Announcement</string>
+    <string name="official_export_csv">Export CSV Report</string>
+    <string name="official_export_pdf">Export PDF Summary</string>
+    <string name="official_export_done">Report generated: %1$s</string>
+
+    <string name="inbox_title">Suggestion Inbox</string>
+    <string name="inbox_seg_all">All</string>
+    <string name="inbox_seg_overdue">Overdue</string>
+    <string name="inbox_seg_unassigned">Unassigned</string>
+    <string name="inbox_seg_resolved">Resolved</string>
+    <string name="inbox_empty_title">Inbox Clear</string>
+    <string name="inbox_empty_desc">No ward suggestions match the selected triage filter.</string>
+
+    <string name="official_action_title">Triage &amp; Action</string>
+    <string name="official_assign_section">Department &amp; Priority</string>
+    <string name="official_dept_label">Assigned Department</string>
+    <string name="official_officer_label">Field Officer Name</string>
+    <string name="official_priority_label">Priority &amp; SLA Target</string>
+    <string name="official_save_assignment">Save Assignment</string>
+    <string name="official_status_section">Update Status &amp; Response</string>
+    <string name="official_response_label">Public Official Response</string>
+    <string name="official_response_hint">Describe inspection findings, crew dispatch, or resolution proof…</string>
+    <string name="official_proof_check">Attach geotagged resolution proof verification</string>
+    <string name="official_update_status_btn">Update Status &amp; Notify Citizen</string>
+    <string name="official_merge_btn">Mark Duplicate &amp; Merge</string>
+    <string name="official_merge_title">Merge Duplicate Report</string>
+    <string name="official_merge_desc">Enter or pick the primary Tracking ID to link and close this duplicate.</string>
+    <string name="official_merge_hint">e.g. SBX-W14-2041</string>
+    <string name="official_action_saved">Ticket updated and citizen notified.</string>
+
+    <string name="broadcast_title">Broadcast Announcement</string>
+    <string name="broadcast_ward_label">Target Ward / Gram Panchayat</string>
+    <string name="broadcast_dept_label">Issuing Department</string>
+    <string name="broadcast_headline_label">Announcement Headline</string>
+    <string name="broadcast_headline_hint">e.g. Scheduled Water Valve Maintenance</string>
+    <string name="broadcast_body_label">Official Notice Details</string>
+    <string name="broadcast_body_hint">Enter timings, affected streets, and helpline details…</string>
+    <string name="broadcast_publish_btn">Publish to Ward Citizens</string>
+    <string name="broadcast_published">Announcement published to Ward banner.</string>
+
+    <string name="super_admin_title">Executive Overview</string>
+    <string name="super_admin_subtitle">Commissioner &amp; Head of Governance</string>
+    <string name="super_admin_ward_perf">Ward SLA Compliance</string>
+    <string name="super_admin_top_ideas">Top Participatory Budget Ideas</string>
+    <string name="super_admin_web_stub">Web Admin Portal Integration</string>
+    <string name="super_admin_web_stub_desc">Multi-ward CSV/PDF bulk analytics, automated escalation rules, and cross-department staffing controls are ready for web portal sync.</string>
+</resources>

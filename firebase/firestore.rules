@@ -1,0 +1,71 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function userDoc() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+
+    function isOfficial() {
+      return isSignedIn() && (
+        request.auth.token.role == 'OFFICIAL' ||
+        request.auth.token.role == 'SUPER_ADMIN' ||
+        userDoc().role == 'OFFICIAL' ||
+        userDoc().role == 'SUPER_ADMIN'
+      );
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    // DPDP Act: Users can only read/write/delete their own profile record.
+    match /users/{userId} {
+      allow read, create, update, delete: if isOwner(userId);
+    }
+
+    // Civic Suggestions & Grievances
+    match /suggestions/{suggestionId} {
+      allow read: if isSignedIn();
+
+      allow create: if isSignedIn()
+        && request.resource.data.title is string
+        && request.resource.data.title.size() >= 8
+        && request.resource.data.description is string
+        && request.resource.data.description.size() >= 20
+        && request.resource.data.status == 'SUBMITTED'
+        && (
+          request.resource.data.isAnonymous == true
+            ? request.resource.data.authorId == 'anonymous'
+            : request.resource.data.authorId == request.auth.uid
+        );
+
+      // Officials may triage, assign, respond, and change status.
+      // Citizens may only modify upvotes, comments, or post-resolution ratings.
+      allow update: if isOfficial() || (
+        isSignedIn() &&
+        request.resource.data.diff(resource.data).affectedKeys()
+          .hasOnly(['upvoteCount', 'upvoterIds', 'comments', 'rating'])
+      );
+
+      allow delete: if isOfficial();
+    }
+
+    // Local Government Ward Announcements
+    match /announcements/{announcementId} {
+      allow read: if isSignedIn();
+      allow create, update, delete: if isOfficial();
+    }
+
+    // Ward Metadata
+    match /wards/{wardId} {
+      allow read: if true;
+      allow write: if isOfficial();
+    }
+  }
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Monochrome box outline for Android 13+ themed launcher icons -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M36,46 L72,46 Q78,46 78,52 L78,74 Q78,80 72,80 L36,80 Q30,80 30,74 L30,52 Q30,46 36,46 Z"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="3.5" />
+
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M40,45 L40,29 Q40,26 43,26 L65,26 Q68,26 68,29 L68,45"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeLineCap="round"
+        android:strokeWidth="3.2" />
+
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M47,33 L61,33 M47,38 L57,38"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeLineCap="round"
+        android:strokeWidth="2.4" />
+
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M48,63 L52,67 L60,59"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:strokeWidth="3.2" />
+</vector>
