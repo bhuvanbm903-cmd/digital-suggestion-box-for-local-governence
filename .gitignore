@@ -15,3 +15,11 @@ captures/
 *.apk
 *.aab
 output-metadata.json
+
+# Environment and Web
+.env
+*.env
+web/.env
+web/node_modules/
+web/dist/
+

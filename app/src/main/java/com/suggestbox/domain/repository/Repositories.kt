@@ -32,6 +32,10 @@ interface AuthRepository {
     val currentUser: Flow<UserProfile?>
     val latestDispatchedOtp: Flow<OtpDeliveryEvent?> get() = kotlinx.coroutines.flow.emptyFlow()
 
+    suspend fun signInWithPassword(mobileNumber: String, password: String): Result<UserProfile> =
+        Result.failure(NotImplementedError("Password authentication not implemented"))
+    suspend fun registerWithPassword(fullName: String, mobileNumber: String, password: String): Result<UserProfile> =
+        Result.failure(NotImplementedError("Password registration not implemented"))
     suspend fun requestOtp(email: String): Result<String>
     suspend fun verifyOtp(verificationId: String, otpCode: String): Result<UserProfile>
     suspend fun resendOtp(email: String): Result<String>

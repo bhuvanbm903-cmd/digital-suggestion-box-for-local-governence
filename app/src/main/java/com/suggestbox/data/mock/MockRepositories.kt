@@ -71,6 +71,59 @@ class MockAuthRepository @Inject constructor(
         )
     }
 
+    override suspend fun signInWithPassword(mobileNumber: String, password: String): Result<UserProfile> {
+        delay(300)
+        val cleanNumber = mobileNumber.replace(Regex("[^0-9]"), "").takeLast(10)
+        if (cleanNumber.length != 10) {
+            return Result.failure(IllegalArgumentException("Please enter a valid 10-digit mobile number"))
+        }
+        if (password.length < 6) {
+            return Result.failure(IllegalArgumentException("Password must be at least 6 characters long"))
+        }
+        val user = UserProfile(
+            id = "user-${cleanNumber.takeLast(4)}",
+            email = "$cleanNumber@phone.suggestbox.gov.in",
+            phoneNumber = "+91$cleanNumber",
+            hasVerifiedEmail = true,
+            displayName = "Citizen ($cleanNumber)",
+            wardId = preferencesRepository.currentPreferences.selectedWardId,
+            wardName = "Ward 14 • Indiranagar",
+            role = UserRole.CITIZEN,
+            isAnonymous = false,
+        )
+        _currentUser.value = user
+        preferencesRepository.saveUserSession(user)
+        return Result.success(user)
+    }
+
+    override suspend fun registerWithPassword(fullName: String, mobileNumber: String, password: String): Result<UserProfile> {
+        delay(300)
+        val cleanNumber = mobileNumber.replace(Regex("[^0-9]"), "").takeLast(10)
+        if (fullName.isBlank()) {
+            return Result.failure(IllegalArgumentException("Please enter your full name"))
+        }
+        if (cleanNumber.length != 10) {
+            return Result.failure(IllegalArgumentException("Please enter a valid 10-digit mobile number"))
+        }
+        if (password.length < 6) {
+            return Result.failure(IllegalArgumentException("Password must be at least 6 characters long"))
+        }
+        val user = UserProfile(
+            id = "user-${cleanNumber.takeLast(4)}",
+            email = "$cleanNumber@phone.suggestbox.gov.in",
+            phoneNumber = "+91$cleanNumber",
+            hasVerifiedEmail = true,
+            displayName = fullName.trim(),
+            wardId = preferencesRepository.currentPreferences.selectedWardId,
+            wardName = "Ward 14 • Indiranagar",
+            role = UserRole.CITIZEN,
+            isAnonymous = false,
+        )
+        _currentUser.value = user
+        preferencesRepository.saveUserSession(user)
+        return Result.success(user)
+    }
+
     override suspend fun requestOtp(email: String): Result<String> {
         delay(250)
         val normalized = email.trim().lowercase()

@@ -31,6 +31,13 @@ data class LoginUiState(
     val resendCountdown: Int = 0,
     val attemptsRemaining: Int = 5,
     val expiryMinutes: Int = 10,
+    val isRegisterMode: Boolean = false,
+    val fullName: String = "",
+    val mobileNumber: String = "",
+    val password: String = "",
+    val confirmPassword: String = "",
+    val isPasswordVisible: Boolean = false,
+    val isConfirmPasswordVisible: Boolean = false,
 )
 
 @HiltViewModel
@@ -53,6 +60,108 @@ class LoginViewModel @Inject constructor(
                     _uiState.value = _uiState.value.copy(deliveredOtp = event)
                 }
             }
+        }
+    }
+
+    fun setRegisterMode(register: Boolean) {
+        _uiState.value = _uiState.value.copy(
+            isRegisterMode = register,
+            error = null,
+            serverError = null,
+        )
+    }
+
+    fun onFullNameChange(value: String) {
+        _uiState.value = _uiState.value.copy(fullName = value, serverError = null)
+    }
+
+    fun onMobileNumberChange(value: String) {
+        val digits = value.filter { it.isDigit() }.take(10)
+        _uiState.value = _uiState.value.copy(mobileNumber = digits, serverError = null)
+    }
+
+    fun onPasswordChange(value: String) {
+        _uiState.value = _uiState.value.copy(password = value, serverError = null)
+    }
+
+    fun onConfirmPasswordChange(value: String) {
+        _uiState.value = _uiState.value.copy(confirmPassword = value, serverError = null)
+    }
+
+    fun togglePasswordVisibility() {
+        _uiState.value = _uiState.value.copy(isPasswordVisible = !_uiState.value.isPasswordVisible)
+    }
+
+    fun toggleConfirmPasswordVisibility() {
+        _uiState.value = _uiState.value.copy(isConfirmPasswordVisible = !_uiState.value.isConfirmPasswordVisible)
+    }
+
+    fun signInWithMobilePassword() {
+        val state = _uiState.value
+        val mobile = state.mobileNumber.trim()
+        val pwd = state.password
+        if (mobile.length != 10) {
+            _uiState.value = state.copy(serverError = "Please enter a valid 10-digit Indian mobile number")
+            return
+        }
+        if (pwd.length < 6) {
+            _uiState.value = state.copy(serverError = "Password must be at least 6 characters")
+            return
+        }
+
+        viewModelScope.launch {
+            _uiState.value = _uiState.value.copy(isLoading = true, serverError = null)
+            authRepository.signInWithPassword(mobile, pwd)
+                .onSuccess { user ->
+                    preferencesRepository.saveUserSession(user)
+                    _uiState.value = _uiState.value.copy(isLoading = false, authenticated = true)
+                }
+                .onFailure { err ->
+                    _uiState.value = _uiState.value.copy(
+                        isLoading = false,
+                        serverError = err.message ?: "Invalid mobile number or password.",
+                    )
+                }
+        }
+    }
+
+    fun registerWithMobilePassword() {
+        val state = _uiState.value
+        val name = state.fullName.trim()
+        val mobile = state.mobileNumber.trim()
+        val pwd = state.password
+        val confirmPwd = state.confirmPassword
+
+        if (name.isBlank()) {
+            _uiState.value = state.copy(serverError = "Please enter your full name")
+            return
+        }
+        if (mobile.length != 10) {
+            _uiState.value = state.copy(serverError = "Please enter a valid 10-digit Indian mobile number")
+            return
+        }
+        if (pwd.length < 6) {
+            _uiState.value = state.copy(serverError = "Password must be at least 6 characters")
+            return
+        }
+        if (pwd != confirmPwd) {
+            _uiState.value = state.copy(serverError = "Passwords do not match")
+            return
+        }
+
+        viewModelScope.launch {
+            _uiState.value = _uiState.value.copy(isLoading = true, serverError = null)
+            authRepository.registerWithPassword(name, mobile, pwd)
+                .onSuccess { user ->
+                    preferencesRepository.saveUserSession(user)
+                    _uiState.value = _uiState.value.copy(isLoading = false, authenticated = true)
+                }
+                .onFailure { err ->
+                    _uiState.value = _uiState.value.copy(
+                        isLoading = false,
+                        serverError = err.message ?: "Registration failed. This mobile number may already be registered.",
+                    )
+                }
         }
     }
 

@@ -88,6 +88,21 @@
     <string name="dpdp_checkbox_label">I understand and consent to local governance processing as described above.</string>
     <string name="dpdp_accept_continue">Accept &amp; Continue</string>
 
+    <!-- Login / Mobile & Password Auth -->
+    <string name="login_phone_password_tab">Mobile &amp; Password</string>
+    <string name="login_email_otp_tab">Email Verification</string>
+    <string name="login_fullname_label">Full Name</string>
+    <string name="login_fullname_placeholder">Enter your full name</string>
+    <string name="login_password_label">Password</string>
+    <string name="login_password_placeholder">Enter password (min 6 characters)</string>
+    <string name="login_confirm_password_label">Confirm Password</string>
+    <string name="login_confirm_password_placeholder">Re-enter your password</string>
+    <string name="login_signin_btn">Sign In to SuggestBox</string>
+    <string name="login_register_btn">Register Citizen Account</string>
+    <string name="login_switch_to_register">Don\'t have an account? Create Account</string>
+    <string name="login_switch_to_login">Already have an account? Sign In</string>
+    <string name="login_phone_prefix">+91</string>
+
     <!-- Login / Email Verification -->
     <string name="login_title">Citizen Sign In</string>
     <string name="login_subtitle">Verify with your email address or continue anonymously</string>
