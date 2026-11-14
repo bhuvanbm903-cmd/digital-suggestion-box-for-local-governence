@@ -194,6 +194,7 @@ fun SuggestBoxNavHost(
                     onSelectRole = onSelectRole,
                     onOpenOfficialConsole = { navController.navigate(SuggestBoxRoutes.OFFICIAL_DASHBOARD) },
                     onOpenSuperAdmin = { navController.navigate(SuggestBoxRoutes.SUPER_ADMIN_OVERVIEW) },
+                    onOpenWebPortal = { navController.navigate(SuggestBoxRoutes.WEB_PORTAL) },
                     onLoggedOut = {
                         navController.navigate(SuggestBoxRoutes.LOGIN) {
                             popUpTo(0) { inclusive = true }
@@ -273,6 +274,12 @@ fun SuggestBoxNavHost(
                 SuperAdminScreen(
                     onBack = { navController.popBackStack() },
                     onOpenOfficialDashboard = { navController.navigate(SuggestBoxRoutes.OFFICIAL_DASHBOARD) },
+                )
+            }
+
+            composable(SuggestBoxRoutes.WEB_PORTAL) {
+                com.suggestbox.ui.screens.webportal.WebPortalScreen(
+                    onBack = { navController.popBackStack() },
                 )
             }
         }

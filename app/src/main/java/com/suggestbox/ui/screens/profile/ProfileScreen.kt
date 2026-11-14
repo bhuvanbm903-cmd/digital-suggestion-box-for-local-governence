@@ -63,6 +63,7 @@ fun ProfileScreen(
     onOpenOfficialConsole: () -> Unit,
     onOpenSuperAdmin: () -> Unit,
     onLoggedOut: () -> Unit,
+    onOpenWebPortal: () -> Unit = {},
     bottomBar: @Composable () -> Unit,
     viewModel: ProfileViewModel = hiltViewModel(),
 ) {
@@ -378,6 +379,14 @@ fun ProfileScreen(
                         title = stringResource(R.string.setting_about),
                         icon = SuggestIcons.Info,
                         onClick = { activeSheet = ProfileSheetType.ABOUT },
+                    )
+                    GroupedDivider()
+                    GroupedNavigationRow(
+                        title = "Open Web Portal",
+                        trailingValue = "Live Browser",
+                        icon = SuggestIcons.Explore,
+                        iconTint = colors.primary,
+                        onClick = onOpenWebPortal,
                     )
                     GroupedDivider()
                     GroupedNavigationRow(

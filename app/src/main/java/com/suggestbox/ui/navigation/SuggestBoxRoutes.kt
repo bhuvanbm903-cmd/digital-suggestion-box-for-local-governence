@@ -28,6 +28,7 @@ object SuggestBoxRoutes {
     const val OFFICIAL_DETAIL = "official/detail/{suggestionId}"
     const val BROADCAST_ANNOUNCEMENT = "official/broadcast"
     const val SUPER_ADMIN_OVERVIEW = "admin/overview"
+    const val WEB_PORTAL = "web/portal"
 
     fun officialDetail(suggestionId: String): String = "official/detail/$suggestionId"
 
